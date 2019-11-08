@@ -1,0 +1,19 @@
+--- !ruby/object:LibraryData
+books:
+- !ruby/object:Book
+  title: Star Wars
+  author: !ruby/object:Author
+    name: Lucas
+- !ruby/object:Book
+  title: Star Wars
+  author: !ruby/object:Author
+    name: Lucas
+- !ruby/object:Book
+  title: Star Wars
+  author: !ruby/object:Author
+    name: Lucas
+- !ruby/object:Book
+  title: Star Wars
+  author: !ruby/object:Author
+    name: Lucas
+orders: []
