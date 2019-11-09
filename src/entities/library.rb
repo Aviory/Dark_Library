@@ -53,6 +53,23 @@ class Library
     rescue
       "Rescued"
     end
-
   end
+
+  def top_reader
+    max = 0
+    count = 0
+    reader = @orders[0].reader
+
+    @orders.each do |current_order| @orders.each do |mach_order| if current_order.reader.equal?mach_order.reader
+                                                                   count += 1 end end
+    if(count > max)
+      max = count
+      reader = current_order.reader
+    end
+    count = 0
+    end
+    reader
+  end
+
+
 end

@@ -10,7 +10,7 @@ class Order
   def initialize(book,reader )
     @book = book
     @reader = reader
-    @date = Date.strftime('%Y%m%d')
+    #@date = Time.strftime('%Y%m%d')
 
   end
 

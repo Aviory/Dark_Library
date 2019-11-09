@@ -16,4 +16,30 @@ books:
   title: Star Wars
   author: !ruby/object:Author
     name: Lucas
-orders: []
+- !ruby/object:Book
+  title: Stars
+  author: !ruby/object:Author
+    name: Jhon Dow
+orders:
+- !ruby/object:Order
+  book: !ruby/object:Book
+    title: Wall Street
+    author: !ruby/object:Author
+      name: J Belford
+  reader: !ruby/object:Reader
+    name: Jhon Dow
+    email: dow@gmail.com
+    city: London
+    street: Baker Street
+    house: '12'
+- !ruby/object:Order
+  book: !ruby/object:Book
+    title: Gone With the Wind)
+    author: !ruby/object:Author
+      name: Margaret Munnerlyn Mitchell
+  reader: !ruby/object:Reader
+    name: Will Smith
+    email: wsmith@y.com
+    city: Philadelphia
+    street: Washington Square
+    house: '1'
