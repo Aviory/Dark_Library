@@ -4,6 +4,12 @@ class DarkConsole
     gets.chomp
   end
 
+  def input_int(msg)
+    puts msg
+    gets.chomp.to_i
+  end
+
+
   def output(msg)
     puts msg
   end
@@ -14,7 +20,8 @@ class DarkConsole
     puts "3. save data "
     puts "4. read data"
     puts "5. top reader"
-    puts "6. "
+    puts "6. top book"
+    puts "7. add reader in Library"
     puts "0. exit (don't enter zero plz >_<) "
 
   end

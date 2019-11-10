@@ -20,6 +20,10 @@ books:
   title: Stars
   author: !ruby/object:Author
     name: Jhon Dow
+- &1 !ruby/object:Book
+  title: Gone With the Wind)
+  author: !ruby/object:Author
+    name: Margaret Munnerlyn Mitchell
 orders:
 - !ruby/object:Order
   book: !ruby/object:Book
@@ -43,3 +47,20 @@ orders:
     city: Philadelphia
     street: Washington Square
     house: '1'
+- !ruby/object:Order
+  book: *1
+  reader: &2 !ruby/object:Reader
+    name: Jhon Doe
+    email: jdoe@gmail.com
+    city: LA
+    street: Street
+    house: '2'
+  date: '20191110'
+readers:
+- !ruby/object:Reader
+  name: Will Smith
+  email: wsmith@gmail.com
+  city: NY
+  street: Street
+  house: '5'
+- *2

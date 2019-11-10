@@ -1,5 +1,5 @@
 
 class LibraryData
-  attr_accessor :books, :orders
+  attr_accessor :books, :orders, :readers
 
 end

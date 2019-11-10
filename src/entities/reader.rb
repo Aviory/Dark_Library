@@ -1,7 +1,7 @@
 class Reader
 
   def to_s
-
+    " #{self.name}"
   end
 
   def equals mach_reader
