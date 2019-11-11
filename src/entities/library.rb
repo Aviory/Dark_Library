@@ -154,5 +154,28 @@ class Library
     response
   end
 
+  def readers_count_three_most_popular_books
+    top_books = Hash.new
+    isValueAdd = false
+    @orders.each do |current_order|
+      top_books.each_key do |order_key, value|
+        if current_order.book.eql? order_key.book and !current_order.reader.eql?order_key.reader
+          top_books[order_key] += 1
+          #top_books.update(top_books){|order_key, value| value + 1 }
+          isValueAdd = true
+          break
+        end
+      end
+      if !isValueAdd
+        top_books[current_order] = 1
+      end
+      isValueAdd = false
+    end
+    p top_books
+    p top_books.sort
+    rr = {top_books.keys[-1].book => top_books.values[-1],top_books.keys[-2].book => top_books.values[-2],top_books.keys[-3].book => top_books.values[-3]}
+    rr
+  end
+
 
 end

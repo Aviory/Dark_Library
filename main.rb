@@ -8,7 +8,7 @@ console = DarkConsole.new
 loop do
   console.case_description
 
-  case console.input("enter case number")
+  case "8"
   when "0" #exit
     break
   when "1" #addBook
@@ -45,6 +45,8 @@ loop do
     console.output(lib.top_book.inspect)
   when "7"
     lib.add_readers( Reader.new(console.input("name"), console.input("email"), console.input("city"), console.input("street"), console.input("house")))
+  when "8"
+   console.output(lib.readers_count_three_most_popular_books.inspect)
   else
     console.input("bad num")
   end

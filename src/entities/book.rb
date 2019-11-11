@@ -1,12 +1,7 @@
 
 require_relative "../entities/Author"
-def equals mach_reader
-  if self.title == mach_book.title
-    true
-  else
-    false
-  end
-end
+
+
 class Book
   attr_reader :author, :title
 
@@ -14,6 +9,16 @@ class Book
     @title = title
     @author = author
   end
+
+
+  def eql?(other)
+    if self.title.eql?other.title
+      true
+    else
+      false
+    end
+  end
+
 
   def to_s
     " #{self.title}: #{self.author}"

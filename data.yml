@@ -24,6 +24,14 @@ books:
   title: Gone With the Wind)
   author: !ruby/object:Author
     name: Margaret Munnerlyn Mitchell
+- &2 !ruby/object:Book
+  title: The Terminator
+  author: !ruby/object:Author
+    name: Shaun Hutson
+- !ruby/object:Book
+  title: 'Terminator 2: Judgment Day'
+  author: !ruby/object:Author
+    name: Randall Frakes
 orders:
 - !ruby/object:Order
   book: !ruby/object:Book
@@ -49,18 +57,36 @@ orders:
     house: '1'
 - !ruby/object:Order
   book: *1
-  reader: &2 !ruby/object:Reader
+  reader: &5 !ruby/object:Reader
     name: Jhon Doe
     email: jdoe@gmail.com
     city: LA
     street: Street
     house: '2'
   date: '20191110'
+- !ruby/object:Order
+  book: *2
+  reader: &3 !ruby/object:Reader
+    name: Tom
+    email: tom@gmail.com
+    city: NY
+    street: Street
+    house: '6'
+  date: '20191111'
+- !ruby/object:Order
+  book: *2
+  reader: &4 !ruby/object:Reader
+    name: Will Smith
+    email: wsmith@gmail.com
+    city: NY
+    street: Street
+    house: '5'
+  date: '20191111'
+- !ruby/object:Order
+  book: *1
+  reader: *3
+  date: '20191111'
 readers:
-- !ruby/object:Reader
-  name: Will Smith
-  email: wsmith@gmail.com
-  city: NY
-  street: Street
-  house: '5'
-- *2
+- *4
+- *5
+- *3

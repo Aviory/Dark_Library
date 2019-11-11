@@ -4,14 +4,15 @@ class Reader
     " #{self.name}"
   end
 
-  def equals mach_reader
-    if self.name == mach_reader.name
+
+
+  def eql?(other)
+    if self.name.eql?other.name
       true
     else
       false
     end
   end
-
 
   attr_accessor :name, :email, :city, :street, :house
 

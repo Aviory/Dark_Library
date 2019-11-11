@@ -19,5 +19,13 @@ class Order
     " #{self.book}: #{self.reader}  #{self.date}"
     end
 
+  def eql?(other)
+    if self.book.eql?other.book and self.reader.eql?other.reader
+      true
+    else
+      false
+    end
+  end
+
 
 end

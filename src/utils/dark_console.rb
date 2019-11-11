@@ -22,6 +22,7 @@ class DarkConsole
     puts "5. top reader"
     puts "6. top book"
     puts "7. add reader in Library"
+    puts "8. readers count three most popular books"
     puts "0. exit (don't enter zero plz >_<) "
 
   end
