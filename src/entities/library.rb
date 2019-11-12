@@ -69,7 +69,6 @@ class Library
     max = 0
     count = 0
     reader = @orders[0].reader
-
     @orders.each do |current_order|
       @orders.each do |mach_order|
         if current_order.reader.equal? mach_order.reader and !current_order.book.equal? mach_order.book
@@ -89,7 +88,6 @@ class Library
     max = 0
     count = 0
     book = @orders[0].book
-
     @orders.each do |current_order|
       @orders.each do |mach_order|
         if current_order.book.equal? mach_order.book and !current_order.reader.equal? mach_order.reader
@@ -154,7 +152,8 @@ class Library
     response
   end
 
-  def readers_count_three_most_popular_books
+
+  def three_most_popular_books
     top_books = Hash.new
     isValueAdd = false
     @orders.each do |current_order|
@@ -171,10 +170,28 @@ class Library
       end
       isValueAdd = false
     end
-    p top_books
-    p top_books.sort
-    rr = {top_books.keys[-1].book => top_books.values[-1],top_books.keys[-2].book => top_books.values[-2],top_books.keys[-3].book => top_books.values[-3]}
-    rr
+    rr = top_books.sort_by {|k, v| v}
+    #rr.select {|k, v | }
+    {rr[-1][0].book => rr[-1][1],rr[-2][0].book => rr[-2][1],rr[-3][0].book => rr[-3][1]}
+  end
+
+
+  def readers_count_hwo_get_most_popular_books
+    read_orders = Array.new
+    books = three_most_popular_books
+    @orders.each do |current_order|
+      books.each do |book, value|
+        if current_order.book.eql? book and read_orders.find_all do |contain_order|
+          if contain_order.reader.eql?current_order.reader
+            break
+          end
+          true
+        end
+          read_orders.push current_order
+        end
+      end
+    end
+    read_orders.size
   end
 
 
