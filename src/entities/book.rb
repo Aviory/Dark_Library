@@ -1,27 +1,22 @@
-
-require_relative "../entities/Author"
-
+require_relative "../entities/author"
 
 class Book
   attr_reader :author, :title
 
-  def initialize(title, author )
-    @title = title
-    @author = author
-  end
-
-
-  def eql?(other)
-    if self.title.eql?other.title
-      true
+  def initialize(title, author)
+    if !title.is_a?(String) or title.size == nil or author.is_a?(Author)
+      begin
+        raise CustomError.new("Invalid argument")
+      rescue => e
+        puts e.msg
+      end
     else
-      false
+      @title = title
+      @author = author
     end
   end
 
-
   def to_s
-    " #{self.title}: #{self.author}"
+    " #{title}: #{author}"
   end
-
 end

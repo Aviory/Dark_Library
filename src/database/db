@@ -1,0 +1,18 @@
+require_relative "../entities/library_data"
+module DB
+  def save(orders = [], books = [], authors = [], readers = [])
+    data = LibraryData.new
+    data.books = books
+    data.orders = orders
+    data.readers = readers
+    data.authors = authors
+
+    File.write("data.yml", data.to_yaml)
+  end
+
+  def read
+    data = YAML.load (File.read ("data.yml"))
+    data.class == Library # true
+    data
+  end
+end

@@ -1,3 +1,0 @@
-class ConsoleInputExceptions < StandardError
-
-end

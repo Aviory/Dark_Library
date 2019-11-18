@@ -1,7 +1,5 @@
-
-
-require_relative "../entities/Book"
-require_relative "../entities/Reader"
+require_relative "../entities/book"
+require_relative "../entities/reader"
 
 
 class Order
@@ -18,14 +16,5 @@ class Order
   def to_s
     " #{self.book}: #{self.reader}  #{self.date}"
     end
-
-  def eql?(other)
-    if self.book.eql?other.book and self.reader.eql?other.reader
-      true
-    else
-      false
-    end
-  end
-
 
 end
